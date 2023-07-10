@@ -8,44 +8,50 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <section class="main">
-    <header class="head">
-      <nav class="navigation"></nav>
-      <div class="logo"></div>
-      <div class="simple_menu">
-        <button class="simple_menu_btn">Join</button>
-        <button class="simple_menu_btn">Sign in</button>
+  <header>
+    <div class="navigation_icon"></div>
+    <nav class="navigation"></nav>
+    <div class="header_logo"></div>
+    <div class="header_simple_menu">
+      <button class="header_simple_menu_btn">Join</button>
+      <button class="header_simple_menu_btn">Sign in</button>
+    </div>
+  </header>
+  <div class="main_background">
+    <section class="main"></section>
+    <div class="inner">
+      <div class="main_pagination">
+        <div class="arrow_left"></div>
+        <div class="counterbox">
+          <span class="current_number">01</span>
+          <span class="total_number"> / 4</span>
+        </div>
+        <div class="arrow_right"></div>
       </div>
-    </header>
-    <div class="pagination">
-      <div class="arrow_left"></div>
-      <div class="counterbox">
-        <span class="current_number">01</span>
-        <span class="total_number"> / 4</span>
+    </div>
+  </div>
+  <section class="date inner">
+    <div class="date_select_bar">
+      <div class="date_select_bar_option">
+        <span class="date_select_bar_option_title">Where to (required)</span>
+        <input type="text" class="date_select_bar_option_input">
       </div>
-      <div class="arrow_right"></div>
+      <div class="date_select_bar_option">
+        <span class="date_select_bar_option_title">Check-in</span>
+        <button class="date_select_bar_option_btn">Add Date</button>
+      </div>
+      <div class="date_select_bar_option">
+        <span class="date_select_bar_option_title">Check-out</span>
+        <button class="date_select_bar_option_btn">Add Date</button>
+      </div>
+      <div class="date_select_bar_option">
+        <button class="date_select_bar_option_btn">Room/Guest</button>
+        <button class="date_select_bar_option_btn">Special Rate</button>
+      </div>
+      <button class="date_btn_find">
+        <span class="date_btn_find_txt">Find</span>
+      </button>
     </div>
-  </section>
-  <section class="select_bar">
-    <div class="select_bar_option">
-      <span class="select_bar_option_title">Where to (required)</span>
-      <input type="text" class="select_bar_option_input">
-    </div>
-    <div class="select_bar_option">
-      <span class="select_bar_option_title">Check-in</span>
-      <button class="select_bar_option_btn">Add Date</button>
-    </div>
-    <div class="select_bar_option">
-      <span class="select_bar_option_title">Check-out</span>
-      <button class="select_bar_option_btn">Add Date</button>
-    </div>
-    <div class="select_bar_option">
-      <button class="select_bar_option_btn">Room/Guest</button>
-      <button class="select_bar_option_btn">Special Rate</button>
-    </div>
-    <button class="btn_find">
-      <span class="btn_find_txt">Find</span>
-    </button>
   </section>
   <section class="country">
     <h2 class="title">Explore Hilton in the world</h2>

@@ -758,6 +758,7 @@ header {
 .hotel_join_box {
   display: flex;
   width: 100%;
+  position: relative;
 }
 
 .hotel_join_box_img {
@@ -769,4 +770,120 @@ header {
 
 .hotel_join_box_txt {
   width: 50%;
+}
+
+.hotel_join_box_txt_title {
+  font-size: var(--font-large);
+  font-weight: var(--fweight-extra-bold);
+  position: relative;
+  top: 5%;
+  left: -25%;
+}
+
+.hotel_join_box_txt_contxt {
+  font-size: var(--font-middle);
+  font-weight: var(--fweight-light);
+  margin-top: 2.5rem;
+  margin-left: 3.75rem;
+}
+
+.hotel_join_box_btn {
+  font-size: var(--font-regular);
+  font-weight: var(--fweight-light);
+  border: 1px solid var(--color-btn-gray);
+  color: var(--color-btn-letter-gray);
+  border-radius: 30px;
+  padding: 0.625rem 2.875rem;
+  margin-top: 1.8rem;
+  margin-left: 3.75rem;
+}
+
+
+/* footer */
+
+.footer {
+  margin-top: 15rem;
+  background-color: #f3f3f3;
+  color: #6c6c6c
+}
+
+.footer .inner {
+  padding-top: 5rem;
+  display: flex;
+}
+
+.footer_contact_box {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_contact_box_txt {
+  font-size: var(--font-regular-big);
+}
+
+.footer_contact_box_txt.title {
+  font-weight: var(--fweight-light);
+}
+
+.footer_contact_box_txt.number {
+  font-weight: var(--fweight-semi-bold);
+}
+
+.footer_contact_box_sns {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.footer_contact_box_sns_btn {
+  width: 30px;
+  height: 30px;
+}
+
+.footer_contact_box_sns_btn.fb {
+  background: url(./images/fb_icon.png) 0 0 no-repeat;
+  background-size: cover;
+}
+
+.footer_contact_box_sns_btn.insta {
+  background: url(./images/insta_icon.png) 0 0 no-repeat;
+  background-size: cover;
+  margin: 0 1rem;
+}
+
+.footer_contact_box_sns_btn.twitter {
+  background: url(./images/twitter_icon.png) 0 0 no-repeat;
+  background-size: cover;
+}
+
+
+.footer_menu {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer_menu_sub {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_menu_sub:first-child {
+  margin-right: 2rem;
+}
+
+.footer_menu_txt {
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.footer_copyright {
+  display: block;
+  text-align: center;
+  padding: 6rem 0 1rem;
+}
+
+.footer_menu_txt {
+  color: #8da6b5;
+  font-weight: var(--fweight-light);
 }

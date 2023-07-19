@@ -68,6 +68,7 @@
 body {
   margin: 0;
   cursor: default;
+  overflow-x: hidden;
 }
 
 a {
@@ -432,13 +433,13 @@ header {
 /* stay_information */
 
 .stay_information {
-  margin-top: 10rem;
+  margin-top: 15rem;
 }
 
 .stay_information_box {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 11rem;
+  margin-bottom: 13rem;
 }
 
 .stay_information_box_img {
@@ -508,7 +509,7 @@ header {
 
 .hotel_information {
   background-color: var(--color-dark-white);
-  margin-top: 10rem;
+  margin-top: 15rem;
 }
 
 .hotel_information h2 {
@@ -614,16 +615,17 @@ header {
 /* hotel_list */
 
 .hotel_list {
-  margin-top: 10rem;
+  margin-top: 15rem;
+  width: 100%;
 }
 
 .hotel_list_container {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  overflow: hidden;
   margin-bottom: 5rem;
   margin-top: 0;
+  transform: translate(0, 0);
 }
 
 .hotel_list_container:nth-child(2),
@@ -639,11 +641,13 @@ header {
   display: flex;
   flex-direction: column;
   margin: 0 1rem;
+  user-select: none;
 }
 
 .hotel_list_box_img {
-  width: 23.125rem;
-  height: 14.375rem;
+  width: 21.25rem;
+  height: 12.5rem;
+  -webkit-user-drag: none;
 }
 
 .hotel_list_box_img.vietnam {
@@ -723,7 +727,7 @@ header {
 
 .hotel_list_box_title {
   font-weight: var(--fweight-light);
-  font-size: var(--font-middle);
+  font-size: var(--font-regular-big);
   margin: 1rem 0 0.5rem;
 }
 
@@ -752,7 +756,7 @@ header {
 /* hotel join */
 
 .hotel_join {
-  margin-top: 10rem;
+  margin-top: 15rem;
 }
 
 .hotel_join_box {
@@ -802,7 +806,7 @@ header {
 /* footer */
 
 .footer {
-  margin-top: 15rem;
+  margin-top: 20rem;
   background-color: #f3f3f3;
   color: #6c6c6c
 }
@@ -838,6 +842,11 @@ header {
 .footer_contact_box_sns_btn {
   width: 30px;
   height: 30px;
+  transition: transform var(--animation-duration) ease-in;
+}
+
+.footer_contact_box_sns_btn:hover {
+  transform: scale(1.2);
 }
 
 .footer_contact_box_sns_btn.fb {
@@ -877,13 +886,36 @@ header {
   width: fit-content;
 }
 
+.footer_menu_txt {
+  color: #859eae;
+  font-weight: var(--fweight-extra-light);
+  font-size: var(--font-small);
+}
+
 .footer_copyright {
   display: block;
   text-align: center;
-  padding: 6rem 0 1rem;
+  padding: 5rem 0 1rem;
+  font-weight: var(--fweight-extra-light);
+  font-size: var(--font-small);
 }
 
-.footer_menu_txt {
-  color: #8da6b5;
-  font-weight: var(--fweight-light);
+
+/* Responsive */
+/* For below 768px screen width*/
+@media screen and (max-width: 768px) {
+
+  :root {
+     /* Font Size */
+  --font-large: 30px;
+  --font-medium: 22px;
+  --font-middle: 18px;
+  --font-regular-big: 16px;
+  --font-regular: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+  }
+
+
+
 }

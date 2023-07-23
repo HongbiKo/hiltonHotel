@@ -1,3 +1,152 @@
+// main slide
+
+const slide = document.querySelector(".slide");
+const prevBtn = document.querySelector(".slide_arrow_left");
+const nextBtn = document.querySelector(".slide_arrow_right");
+let slideItems = document.querySelectorAll(".slide_img");
+const currentIndex = document.querySelector(".current_number");
+const totalIndex = document.querySelector(".total_number");
+
+let slideWidth = slide.clientWidth;
+const maxSlide = slideItems.length;
+let currSlide = 1;
+
+const startSlide = slideItems[0];
+const endSlide = slideItems[slideItems.length - 1];
+const startElem = document.createElement("div");
+const endElem = document.createElement("div");
+
+endSlide.classList.forEach((c) => endElem.classList.add(c));
+endElem.innerHTML = endSlide.innerHTML;
+
+startSlide.classList.forEach((c) => startElem.classList.add(c));
+startElem.innerHTML = startSlide.innerHTML;
+
+slideItems[0].before(endElem);
+slideItems[slideItems.length - 1].after(startElem);
+
+let offset = slideWidth + currSlide;
+slideItems.forEach((i) => {
+  i.setAttribute("style", `left: ${-offset}px`);
+});
+
+currentIndex.textContent = `0${currSlide}`;
+totalIndex.textContent = `/ ${maxSlide}`;
+
+function nextMove() {
+  currSlide++;
+  currentIndex.textContent = `0${currSlide}`;
+  if (currSlide <= maxSlide) {
+    const offset = slideWidth * currSlide;
+    slideItems.forEach((i) => {
+      i.setAttribute("style", `left: ${-offset}px`);
+    });
+  } else {
+    currSlide = 0;
+    let offset = slideWidth * currSlide;
+    slideItems.forEach((i) => {
+      i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+    });
+    currSlide++;
+    currentIndex.textContent = `0${currSlide}`;
+    offset = slideWidth * currSlide;
+    setTimeout(() => {
+      slideItems.forEach((i) => {
+        i.setAttribute("style", `transition: ${0.25}s; left: ${-offset}px`);
+      });
+    }, 0);
+  }
+}
+
+function prevMove() {
+  currSlide--;
+  currentIndex.textContent = `0${currSlide}`;
+  if (currSlide > 0) {
+    const offset = slideWidth * currSlide;
+    slideItems.forEach((i) => {
+      i.setAttribute("style", `left: ${-offset}px`);
+    });
+  } else {
+    currSlide = maxSlide + 1;
+    let offset = slideWidth * currSlide;
+    slideItems.forEach((i) => {
+      i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+    });
+    currSlide--;
+    currentIndex.textContent = `0${currSlide}`;
+    offset = slideWidth * currSlide;
+    setTimeout(() => {
+      slideItems.forEach((i) => {
+        i.setAttribute("style", `transition: ${0.25}s; left: ${-offset}px`);
+      });
+    }, 0);
+  }
+}
+
+nextBtn.addEventListener("click", () => {
+  nextMove();
+});
+
+prevBtn.addEventListener("click", () => {
+  prevMove();
+});
+
+window.addEventListener("resize", () => {
+  slideWidth = slide.clientWidth;
+  prevMove();
+  nextMove();
+});
+
+let startPoint = 0;
+let endPoint = 0;
+
+slide.addEventListener("mousedown", (e) => {
+  startPoint = e.pageX;
+});
+
+// pc click evenet (drag)
+
+slide.addEventListener("mouseup", (e) => {
+  endPoint = e.pageX;
+  if (startPoint < endPoint) {
+    // 마우스 오른쪽으로 드래그 됐을때
+    prevMove();
+  } else if (startPoint > endPoint) {
+    // 마우스 왼쪽으로 드래그 됐을때
+    nextMove();
+  }
+});
+
+// mobile touch event (swipe)
+slide.addEventListener("touchstart", (e) => {
+  startPoint = e.touches[0].pageX;
+});
+slide.addEventListener("touchend", (e) => {
+  endPoint = e.changedTouches[0].pageX;
+  if (startPoint < endPoint) {
+    prevMove();
+  } else if (startPoint > endPoint) {
+    nextMove();
+  }
+});
+
+// auto slide
+let loopInterval = setInterval(() => {
+  nextMove();
+}, 5000);
+
+// mouseon -> stop loop
+slide.addEventListener("mouseover", () => {
+  clearInterval(loopInterval);
+});
+
+// mouseout -> start loop
+slide.addEventListener("mouseout", () => {
+  loopInterval = setInterval(() => {
+    nextMove();
+  }, 5000);
+});
+
 // hotel list drag
 
 const list = document.querySelectorAll(".hotel_list_container");

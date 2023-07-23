@@ -27,7 +27,6 @@
   --font-large: 40px;
   --font-medium: 28px;
   --font-middle: 20px;
-
   --font-regular-big: 18px;
   --font-regular: 16px;
   --font-small: 14px;
@@ -75,9 +74,12 @@ a {
   text-decoration: none;
 }
 
-ul {
+ul,
+li {
   list-style: none;
   padding-left: 0;
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -113,7 +115,7 @@ header {
   justify-content: space-between;
   width: 100%;
   position: fixed;
-  z-index: 5;
+  z-index: 30;
 
 }
 
@@ -174,25 +176,50 @@ header {
   position: relative;
 }
 
-.main {
-  background: url(./images/main.png) 0 100% no-repeat;
-  background-size: cover;
+.slide {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  user-select: none;
+  opacity: 0.5;
+}
+
+.slide_img {
+  position: relative;
+  left: 0px;
   width: 100%;
   height: 100vh;
-  opacity: .55;
+  /* opacity: 0.5; */
+  flex-shrink: 0;
+  transition: left 0.25s;
 }
-.main_background .inner {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+
+.slide_img.main1 {
+  background: url(./images/main.png) 0 100% no-repeat;
+  background-size: cover;
+}
+
+.slide_img.main2 {
+  background: url(./images/main2.png) 50% 0 no-repeat;
+  background-size: cover;
+}
+
+.slide_img.main3 {
+  background: url(./images/main3.png) 50% 0 no-repeat;
+  background-size: cover;
+}
+
+.slide_img.main4 {
+  background: url(./images/main4.png) 50% 0 no-repeat;
+  background-size: cover;
 }
 
 .main_pagination {
   position: absolute;
-  z-index: 10;
-  left: 0;
-  bottom: 15%;
+  left: 10%;
+  bottom: 20%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -213,7 +240,7 @@ header {
   font-size: 1.9rem;
 }
 
-.main_pagination .arrow_left {
+.slide_arrow_left {
   background: url(./images/arrow_icon_left_white.png) 0 0 no-repeat;
   background-size: cover;
   width: 2.2rem;
@@ -222,7 +249,7 @@ header {
   cursor: pointer;
 }
 
-.main_pagination .arrow_right {
+.slide_arrow_right {
   background: url(././images/arrow_icon_right_white.png) 0 0 no-repeat;
   background-size: cover;
   width: 2.2rem;
@@ -230,6 +257,7 @@ header {
   margin-left: 3.5rem;
   cursor: pointer;
 }
+
 
 
 /* date */
@@ -240,6 +268,8 @@ header {
   background-color: white;
   border-radius: var(--size-border-radius-40);
   border: 1px solid #CBCBCB;
+  position: relative;
+  z-index: 10;
 }
 
 .date_select_bar {
@@ -642,6 +672,7 @@ header {
   flex-direction: column;
   margin: 0 1rem;
   user-select: none;
+  cursor: pointer;
 }
 
 .hotel_list_box_img {
@@ -899,6 +930,8 @@ header {
   font-weight: var(--fweight-extra-light);
   font-size: var(--font-small);
 }
+
+
 
 
 /* Responsive */

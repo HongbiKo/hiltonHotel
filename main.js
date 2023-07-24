@@ -147,6 +147,23 @@ slide.addEventListener("mouseout", () => {
   }, 5000);
 });
 
+// navigation icon & toggle
+
+let clickBox = document.querySelector(".check-menu");
+let menuBar = document.querySelectorAll(".menu-bar");
+let animateClass = ["top-bar", "middle-bar", "last-bar"];
+const navigation = document.querySelector(".navigation");
+const navigationList = document.querySelector(".navigation_list");
+
+clickBox.addEventListener("click", function () {
+  for (let i = 0; i < menuBar.length; i++) {
+    menuBar[i].classList.toggle(animateClass[i]);
+    menuBar[i].classList.toggle("color-change");
+  }
+  navigation.classList.toggle("on");
+  navigationList.classList.toggle("on");
+});
+
 // hotel list drag
 
 const list = document.querySelectorAll(".hotel_list_container");

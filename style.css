@@ -20,7 +20,6 @@
   --color-btn-gray: #CECECE;
   --color-btn-letter-gray: #999;
   --color-location-gray: #C8DEDE;
-  --color-dark-blue: #101244;
 
 
   /* Font Size */
@@ -51,7 +50,6 @@
 
   /* Animation */ 
   --animation-duration: 300ms;
-
 
 }
 
@@ -116,7 +114,6 @@ header {
   width: 100%;
   position: fixed;
   z-index: 30;
-
 }
 
 .header_logo {
@@ -145,25 +142,89 @@ header {
 /* header navigation */
 
 .navigation {
-  position: relative;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  padding: 2rem 5rem;
-  height: 70vh;
-  background-color: var(--color-white);
+  position: absolute;
+  padding-top: 2rem;
+  padding-left: 2rem;
+
+  -webkit-transition: left .3s;
+  -moz-transition: left .3s;
+  -ms-transition: left .3s;
+  -o-transition: left .3s;
+  transition: background-color .3s;
+}
+
+.navigation.on {
+  background-color: var(--color-dark-white);
+  height: 100vh;
+}
+
+.arange_location {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 8px;
+  background-color: none;
+}
+
+.menu-wrap {
+  cursor: pointer;
+}
+
+.check-menu {
   display: none;
 }
 
-.navigation_icon {
-  cursor: pointer;
-  background: url(./images/menu_icon.png) 0 0 no-repeat;
-  background-size: cover;
+.menu-bar {
+  display: block;
   width: 2rem;
-  height: 2rem;
-  margin-top: 1.25rem;
-  margin-left: 2rem;
-  /* display: none; */
+  height: 2px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+.menu-bar.color-change {
+  background-color: var(--color-light-black);
+}
+
+.top-bar {
+  transform : translate(0, 0.5rem) rotate(-45deg);
+}
+
+.middle-bar {
+  transform: scale(0);
+}
+
+.last-bar {
+  transform: translate(0, -0.7rem) rotate(45deg);
+}
+
+.navigation_list {
+  margin-top: 3rem;
+  padding-right: 10rem;
+  padding-bottom: 2rem;
+  position: relative;
+  left: -200%;
+  top: 0;
+
+  -webkit-transition: left .3s;
+  -moz-transition: left .3s;
+  -ms-transition: left .3s;
+  -o-transition: left .3s;
+  transition: left .3s;
+}
+
+.navigation_list.on{
+  left: 0;
+}
+
+.navigation_item {
+  margin-bottom: 2rem;
+}
+
+.navigation_item > a {
+  color: var(--color-black);
+  font-size: var(--font-medium);
+  font-weight: var(--fweight-extra-bold);
 }
 
 
@@ -191,7 +252,6 @@ header {
   left: 0px;
   width: 100%;
   height: 100vh;
-  /* opacity: 0.5; */
   flex-shrink: 0;
   transition: left 0.25s;
 }

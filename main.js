@@ -147,6 +147,8 @@ slide.addEventListener("mouseout", () => {
   }, 5000);
 });
 
+//
+//
 // navigation icon & toggle
 
 let clickBox = document.querySelector(".check-menu");
@@ -164,6 +166,42 @@ clickBox.addEventListener("click", function () {
   navigationList.classList.toggle("on");
 });
 
+//
+//
+//
+// headerbar color change
+const header = document.querySelector(".header");
+const headerBtns = document.querySelectorAll(".header_simple_menu_btn");
+const headerLogo = document.querySelector(".header_logo");
+const datePart = document.querySelector(".date");
+const winScrollTop = window.scrollY;
+const datePartStart = datePart.getBoundingClientRect().top + winScrollTop;
+
+document.addEventListener("scroll", () => {
+  if (window.scrollY > datePartStart) {
+    header.classList.add("on");
+    menuBar.forEach((item) => {
+      item.classList.add("on");
+    });
+    headerBtns.forEach((item) => {
+      item.classList.add("on");
+    });
+    headerLogo.classList.add("on");
+  } else {
+    header.classList.remove("on");
+    menuBar.forEach((item) => {
+      item.classList.remove("on");
+    });
+    headerBtns.forEach((item) => {
+      item.classList.remove("on");
+    });
+    headerLogo.classList.remove("on");
+  }
+});
+
+//
+//
+//
 // hotel list drag
 
 const list = document.querySelectorAll(".hotel_list_container");

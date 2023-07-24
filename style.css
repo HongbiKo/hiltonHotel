@@ -116,12 +116,24 @@ header {
   z-index: 30;
 }
 
+header.on {
+  background-color: var(--color-dark-white);
+}
+
 .header_logo {
   background: url(./images/hilton_logo1.png) 0 0 no-repeat;
   background-size: cover;
   width: 7rem;
   height: 3rem;
   margin-top: 1.25rem;
+  transition: all 0.2s ease-out;
+}
+
+.header_logo.on {
+  background: url(./images/hilton_logo2.png) 0 0 no-repeat;
+  background-size: cover;
+  width: 7rem;
+  height: 3rem;
 }
 
 .header_simple_menu {
@@ -132,6 +144,10 @@ header {
 .header_simple_menu_btn {
   color: var(--color-white);
   font-weight: var(--fweight-light);
+}
+
+.header_simple_menu_btn.on {
+  color: var(--color-black);
 }
 
 .header_simple_menu_btn:first-child {
@@ -158,12 +174,11 @@ header {
   height: 100vh;
 }
 
-.arange_location {
-  display: block;
+.arrange_location {
+  margin: 2rem;
   width: 2rem;
   height: 2rem;
-  margin-bottom: 8px;
-  background-color: none;
+  background-color: transparent;
 }
 
 .menu-wrap {
@@ -184,6 +199,9 @@ header {
 }
 .menu-bar.color-change {
   background-color: var(--color-light-black);
+}
+.menu-bar.on {
+  background-color: var(--color-black);
 }
 
 .top-bar {

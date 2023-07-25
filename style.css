@@ -277,22 +277,22 @@ header.on {
 }
 
 .slide_img.main1 {
-  background: url(./images/main.png) 0 100% no-repeat;
+  background: url(./images/main/main.webp) 0 100% no-repeat;
   background-size: cover;
 }
 
 .slide_img.main2 {
-  background: url(./images/main2.png) 50% 0 no-repeat;
+  background: url(./images/main/main2.webp) 50% 0 no-repeat;
   background-size: cover;
 }
 
 .slide_img.main3 {
-  background: url(./images/main3.png) 50% 0 no-repeat;
+  background: url(./images/main/main3.webp) 50% 0 no-repeat;
   background-size: cover;
 }
 
 .slide_img.main4 {
-  background: url(./images/main4.png) 50% 0 no-repeat;
+  background: url(./images/main/main4.webp) 50% 0 no-repeat;
   background-size: cover;
 }
 
@@ -500,37 +500,37 @@ header.on {
 }
 
 .country_box_list_circle.japan {
-  background: url(./images/japan.jpg) 0 0 no-repeat;
+  background: url(./images/country/japan.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .country_box_list_circle.korea {
-  background: url(./images/korea.jpg) 50% 0 no-repeat;
+  background: url(./images/country/korea.jpg) 50% 0 no-repeat;
   background-size: cover;
 }
 
 .country_box_list_circle.uk {
-  background: url(./images/uk.jpg) 60% 60% no-repeat;
+  background: url(./images/country/uk.jpg) 60% 60% no-repeat;
   background-size: cover;
 }
 
 .country_box_list_circle.usa {
-  background: url(./images/usa.jpg) 45% 0 no-repeat;
+  background: url(./images/country/usa.jpg) 45% 0 no-repeat;
   background-size: cover;
 }
 
 .country_box_list_circle.thailand {
-  background: url(./images/thailand.jpg) 0 50% no-repeat;
+  background: url(./images/country/thailand.jpg) 0 50% no-repeat;
   background-size: cover;
 }
 
 .country_box_list_circle.vietnam {
-  background: url(./images/vietnam.jpg) 50% 0 no-repeat;
+  background: url(./images/country/vietnam.jpg) 50% 0 no-repeat;
   background-size: cover;
 }
 
 .country_box_list_circle.france {
-  background: url(./images/france.jpg) 50% 50% no-repeat;
+  background: url(./images/country/france.jpg) 50% 50% no-repeat;
   background-size: cover;
 }
 
@@ -774,77 +774,77 @@ header.on {
 }
 
 .hotel_list_box_img.vietnam {
-  background: url(./images/vietnam.png) 0 100% no-repeat;
+  background: url(./images/hotelList/vietnam.jpg) 0 100% no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.florida {
-  background: url(./images/florida.png) 0 100% no-repeat;
+  background: url(./images/hotelList/florida.jpg) 0 100% no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.thailand {
-  background: url(./images/thailand.png) 0 100% no-repeat;
+  background: url(./images/hotelList/thailand.jpg) 0 100% no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.aruba {
-  background: url(./images/aruba.png) 50% 100% no-repeat;
+  background: url(./images/hotelList/aruba.jpg) 50% 100% no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.marta {
-  background: url(./images/marta.png) 0 0 no-repeat;
+  background: url(./images/hotelList/marta.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.bali {
-  background: url(./images/bali.png) 0 0 no-repeat;
+  background: url(./images/hotelList/bali.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.mexico {
-  background: url(./images/mexico.png) 0 0 no-repeat;
+  background: url(./images/hotelList/mexico.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.greece {
-  background: url(./images/greece.png) 0 0 no-repeat;
+  background: url(./images/hotelList/greece.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.newyork {
-  background: url(./images/newyork.png) 0 0 no-repeat;
+  background: url(./images/hotelList/newyork.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.brazil {
-  background: url(./images/brazil.png) 0 0 no-repeat;
+  background: url(./images/hotelList/brazil.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.uk {
-  background: url(./images/uk.png) 0 0 no-repeat;
+  background: url(./images/hotelList/uk.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.kenya {
-  background: url(./images/kenya.png) 0 0 no-repeat;
+  background: url(./images/hotelList/kenya.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.newmexico {
-  background: url(./images/new_mexico.png) 0 0 no-repeat;
+  background: url(./images/hotelList/new_mexico.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.turkey {
-  background: url(./images/turkey.png) 0 0 no-repeat;
+  background: url(./images/hotelList/turkey.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
 .hotel_list_box_img.malaysia {
-  background: url(./images/malaysia.png) 0 0 no-repeat;
+  background: url(./images/hotelList/malaysia.jpg) 0 0 no-repeat;
   background-size: cover;
 }
 
@@ -889,7 +889,7 @@ header.on {
 }
 
 .hotel_join_box_img {
-  background: url(./images/join_img.png) 0 0 no-repeat;
+  background: url(./images/join_img.jpg) 0 0 no-repeat;
   background-size: cover;
   width: 50%;
   height: cal(width + 20%);

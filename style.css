@@ -159,19 +159,20 @@ header.on {
 
 .navigation {
   position: absolute;
-  padding-top: 2rem;
-  padding-left: 2rem;
-
-  -webkit-transition: left .3s;
-  -moz-transition: left .3s;
-  -ms-transition: left .3s;
-  -o-transition: left .3s;
-  transition: background-color .3s;
+  top: 2rem;
+  left: 2rem;
+  height: 0;
+  transition: all .3s;
 }
 
 .navigation.on {
   background-color: var(--color-dark-white);
   height: 100vh;
+  top: 0;
+  left: 0;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  transition: all .3s;;
 }
 
 .arrange_location {
@@ -202,6 +203,7 @@ header.on {
 }
 .menu-bar.on {
   background-color: var(--color-black);
+  
 }
 
 .top-bar {
@@ -346,8 +348,10 @@ header.on {
   background-color: white;
   border-radius: var(--size-border-radius-40);
   border: 1px solid #CBCBCB;
+}
+.date.on {
   position: relative;
-  z-index: 10;
+  z-index: 40;
 }
 
 .date_select_bar {
@@ -362,20 +366,22 @@ header.on {
 .date_select_bar_option.left {
   flex-direction: column;
   align-items: flex-start;
-  width: 49%;
+  width: 43%;
 }
 
 .date_select_bar_option.right {
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  width: 49%;
-  justify-content: space-between;
+  width: 55%;
 }
 
 .date_select_bar_option_box {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.date_select_bar_option.right .date_select_bar_option_box {
   margin-right: 0.5rem;
 }
 
@@ -383,7 +389,6 @@ header.on {
   font-weight: var(--fweight-light);
   color: var(--color-dark-gray);
   margin-bottom: 0.3rem;
-  text-align: center;
 }
 
 .date_select_bar_option_input {
@@ -398,19 +403,27 @@ header.on {
   font-weight: var(--fweight-extra-light);
 }
 
+.date_select_bar_option_date {
+  border: 1px solid #CBCBCB;
+  padding: 0.35rem 0.625rem;
+  border-radius: 10px;
+  color: var(--color-light-black);
+  font-weight: var(--fweight-extra-light);
+  font-size: var(--font-small);
+  width: 12rem
+}
+
 .date_select_bar_option_btn {
   background-color: var(--color-light-gray);
-  padding: 0.625rem 0.7rem;
   border-radius: var(--size-border-radius-20);
   color: var(--color-btn-letter-gray);
   font-weight: var(--fweight-extra-light);
   font-size: var(--font-small);
-}
-
-.date_select_bar_option_btn.bigbtn {
-  padding: 0 0.7rem;
+  padding: 0 1rem;
   height: 3rem;
   margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
 } 
 
 .date_btn_find {
@@ -423,6 +436,7 @@ header.on {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-top: 0.4rem;
 }
 
 .date_btn_find_icon {

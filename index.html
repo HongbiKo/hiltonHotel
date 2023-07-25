@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
   <header class="header">
@@ -57,15 +60,12 @@
       </div>
       <div class="date_select_bar_option right">
         <div class="date_select_bar_option_box">
-          <span class="date_select_bar_option_title">Check-in</span>
-          <button class="date_select_bar_option_btn">Add Date</button>
+          <span class="date_select_bar_option_title">Select Date</span>
+          <input class="date_select_bar_option_date" placeholder="Choose the date">
         </div>
-        <div class="date_select_bar_option_box">
-          <span class="date_select_bar_option_title">Check-out</span>
-          <button class="date_select_bar_option_btn">Add Date</button>
-        </div>
-        <button class="date_select_bar_option_btn bigbtn">Room / Guest</button>
-        <button class="date_select_bar_option_btn bigbtn">Special Rate</button>
+        <button class="date_select_bar_option_btn">Room</button>
+        <button class="date_select_bar_option_btn">Guest</button>
+        <button class="date_select_bar_option_btn">Special Rate</button>
         <div class="date_btn_find">
           <div class="date_btn_find_icon"></div>
           <span class="date_btn_find_txt">Find</span>

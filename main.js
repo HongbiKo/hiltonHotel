@@ -289,3 +289,15 @@ function hotelListDrag() {
 hotelListDrag();
 
 window.addEventListener("resize", hotelListDrag);
+
+//
+//
+//
+// date picker
+var dateSelector = document.querySelector(".date_select_bar_option_date");
+
+dateSelector.flatpickr({
+  mode: "range",
+  dateFormat: "Y.m.d",
+  minDate: "today",
+});

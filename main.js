@@ -301,3 +301,110 @@ dateSelector.flatpickr({
   dateFormat: "Y.m.d",
   minDate: "today",
 });
+
+//
+//
+//
+//country carousel slide
+
+const countrySlide = document.querySelector(".country_box_list");
+const countrySlideItems = document.querySelectorAll(
+  ".country_box_list_country"
+);
+const countrySlideItem = document.querySelector(".country_box_list_country");
+
+let currentIdx = 0;
+const slideCount = countrySlideItems.length;
+const countrySlideItemWidth = countrySlideItem.getBoundingClientRect().width;
+const slideMargin = 20;
+
+const countryPrevBtn = document.querySelector(".country_box_arrow_left");
+const countryNextBtn = document.querySelector(".country_box_arrow_right");
+
+makeClone();
+
+function makeClone() {
+  for (let i = 0; i < slideCount; i++) {
+    const cloneSlide = countrySlideItems[i].cloneNode(true);
+    cloneSlide.classList.add("clone");
+    countrySlide.appendChild(cloneSlide);
+  }
+
+  for (let i = slideCount - 1; i >= 0; i--) {
+    const cloneSlide = countrySlideItems[i].cloneNode(true);
+    cloneSlide.classList.add("clone");
+    countrySlide.prepend(cloneSlide);
+  }
+
+  updateWidth();
+  setInitialPos();
+  setTimeout(function () {
+    countrySlide.classList.add("animated");
+  }, 100);
+}
+
+function updateWidth() {
+  const currentSlides = document.querySelectorAll(".country_box_list_country");
+  const newSlideCount = currentSlides.length;
+  const newWidth =
+    (countrySlideItemWidth + slideMargin) * newSlideCount - slideMargin + "px";
+
+  countrySlide.style.width = newWidth;
+}
+
+function setInitialPos() {
+  const initialTranslateValue =
+    -(countrySlideItemWidth + slideMargin) * slideCount;
+  countrySlide.style.transform = "translateX(" + initialTranslateValue + "px)";
+}
+
+countryNextBtn.addEventListener("click", function () {
+  moveSlide(currentIdx + 1);
+});
+
+countryPrevBtn.addEventListener("click", function () {
+  moveSlide(currentIdx - 1);
+});
+
+function moveSlide(num) {
+  countrySlide.style.left = -num * (countrySlideItemWidth + slideMargin) + "px";
+  currentIdx = num;
+
+  if (currentIdx == slideCount || currentIdx == -slideCount) {
+    setTimeout(function () {
+      countrySlide.classList.remove("animated");
+      countrySlide.style.left = "0px";
+      currentIdx = 0;
+    }, 500);
+
+    setTimeout(function () {
+      countrySlide.classList.add("animated");
+    }, 600);
+  }
+}
+
+//
+//
+//
+// stay's image effect when scrolling
+
+const stayBoxes = document.querySelectorAll(".stay_information_box");
+
+const animatebox = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    } else {
+      entry.target.classList.remove("active");
+    }
+  });
+};
+
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0,
+};
+const observer = new IntersectionObserver(animatebox, options);
+
+stayBoxes.forEach((box) => observer.observe(box));

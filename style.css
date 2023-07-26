@@ -458,6 +458,7 @@ header.on {
 
 .country_box {
   display: flex;
+  height: 10rem;
 }
 
 .country_box_arrow_left{
@@ -466,7 +467,7 @@ header.on {
   height: 2.3rem;
   cursor: pointer;
   margin-top: 1rem;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 .country_box_arrow_right {
@@ -475,21 +476,37 @@ header.on {
   height: 2.3rem;
   cursor: pointer;
   margin-top: 1rem;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
+}
+
+.country_box_container {
+  width: 90%;
+  overflow: hidden;
+  position: relative;
 }
 
 .country_box_list {
-  width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.country_box_list.animated {
+  transition: 0.5s ease-out;
 }
 
 .country_box_list_country {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1.2rem;
+  margin: 0 20px 1.2rem 0;
+  width: 7.5rem;
+}
+
+.country_box_list_country:not(:last-child) {
+  margin-right: 20px;
 }
 
 .country_box_list_circle {
@@ -534,6 +551,22 @@ header.on {
   background-size: cover;
 }
 
+.country_box_list_circle.swiss {
+  background: url(./images/country/swiss.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.country_box_list_circle.turkey {
+  background: url(./images/country/turkey.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.country_box_list_circle.canada {
+  background: url(./images/country/canada.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+
 .country_box_list_txt {
   font-size: var(--font-small);
   font-weight: var(--fweight-light);
@@ -562,6 +595,13 @@ header.on {
   display: flex;
   justify-content: space-between;
   margin-bottom: 13rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+}
+.stay_information_box.active {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .stay_information_box_img {

@@ -91,39 +91,6 @@ prevBtn.addEventListener("click", () => {
   prevMove();
 });
 
-let startPoint = 0;
-let endPoint = 0;
-
-slide.addEventListener("mousedown", (e) => {
-  startPoint = e.pageX;
-});
-
-// pc click evenet (drag)
-
-slide.addEventListener("mouseup", (e) => {
-  endPoint = e.pageX;
-  if (startPoint < endPoint) {
-    // 마우스 오른쪽으로 드래그 됐을때
-    prevMove();
-  } else if (startPoint > endPoint) {
-    // 마우스 왼쪽으로 드래그 됐을때
-    nextMove();
-  }
-});
-
-// mobile touch event (swipe)
-slide.addEventListener("touchstart", (e) => {
-  startPoint = e.touches[0].pageX;
-});
-slide.addEventListener("touchend", (e) => {
-  endPoint = e.changedTouches[0].pageX;
-  if (startPoint < endPoint) {
-    prevMove();
-  } else if (startPoint > endPoint) {
-    nextMove();
-  }
-});
-
 // auto slide
 let loopInterval = setInterval(() => {
   nextMove();
@@ -437,6 +404,10 @@ for (let i = 0; i < hotelInfoMaxLength; i++) {
   else hotelInfoPagination.innerHTML += `<li>•</li>`;
 }
 
+const hotelInfoPaginationItems = document.querySelectorAll(
+  ".hotel_information_slideshow_pagination > li"
+);
+
 function hotelInfoNext() {
   hotelInfoCurIndx++;
   if (hotelInfoCurIndx <= hotelInfoMaxLength) {
@@ -444,6 +415,8 @@ function hotelInfoNext() {
     hotelInfoSlideItems.forEach((i) => {
       i.setAttribute("style", `left: ${-offset}px; transition: ${0.3}s`);
     });
+    hotelInfoPaginationItems.forEach((i) => i.classList.remove("active"));
+    hotelInfoPaginationItems[hotelInfoCurIndx - 1].classList.add("active");
   } else {
     hotelInfoCurIndx--;
   }
@@ -456,9 +429,23 @@ function hotelInfoPrev() {
     hotelInfoSlideItems.forEach((i) => {
       i.setAttribute("style", `left: ${-offset}px; transition: ${0.3}s`);
     });
+    hotelInfoPaginationItems.forEach((i) => i.classList.remove("active"));
+    hotelInfoPaginationItems[hotelInfoCurIndx - 1].classList.add("active");
   } else {
     hotelInfoCurIndx++;
   }
+}
+
+for (let i = 0; i < hotelInfoMaxLength; i++) {
+  hotelInfoPaginationItems[i].addEventListener("click", function () {
+    hotelInfoCurIndx = i + 1;
+    const offset = hotelInfoSlideWidth * (hotelInfoCurIndx - 1);
+    hotelInfoSlideItems.forEach((i) =>
+      i.setAttribute("style", `left: ${-offset}px`)
+    );
+    hotelInfoPaginationItems.forEach((i) => i.classList.remove("active"));
+    hotelInfoPaginationItems[hotelInfoCurIndx - 1].classList.add("active");
+  });
 }
 
 hotelInfoNextBtn.addEventListener("click", () => {
@@ -469,6 +456,10 @@ hotelInfoPrevBtn.addEventListener("click", () => {
   hotelInfoPrev();
 });
 
+//
+("");
+// slide each event
+
 window.addEventListener("resize", () => {
   slideWidth = slide.clientWidth;
   prevMove();
@@ -476,4 +467,63 @@ window.addEventListener("resize", () => {
   hotelInfoSlideWidth = hotelInfoSlide.clientWidth;
   hotelInfoNext();
   hotelInfoPrev();
+});
+
+let startPoint = 0;
+let endPoint = 0;
+
+slide.addEventListener("mousedown", (e) => {
+  startPoint = e.pageX;
+});
+hotelInfoSlide.addEventListener("mousedown", (e) => {
+  startPoint = e.pageX;
+});
+
+// pc click evenet (drag)
+
+slide.addEventListener("mouseup", (e) => {
+  endPoint = e.pageX;
+  if (startPoint < endPoint) {
+    // 마우스 오른쪽으로 드래그 됐을때
+    prevMove();
+  } else if (startPoint > endPoint) {
+    // 마우스 왼쪽으로 드래그 됐을때
+    nextMove();
+  }
+});
+
+hotelInfoSlide.addEventListener("mouseup", (e) => {
+  endPoint = e.pageX;
+  if (startPoint < endPoint) {
+    // 마우스 오른쪽으로 드래그 됐을때
+    hotelInfoPrev();
+  } else if (startPoint > endPoint) {
+    // 마우스 왼쪽으로 드래그 됐을때
+    hotelInfoNext();
+  }
+});
+
+// mobile touch event (swipe)
+slide.addEventListener("touchstart", (e) => {
+  startPoint = e.touches[0].pageX;
+});
+slide.addEventListener("touchend", (e) => {
+  endPoint = e.changedTouches[0].pageX;
+  if (startPoint < endPoint) {
+    prevMove();
+  } else if (startPoint > endPoint) {
+    nextMove();
+  }
+});
+
+hotelInfoSlide.addEventListener("touchstart", (e) => {
+  startPoint = e.touches[0].pageX;
+});
+slide.addEventListener("touchend", (e) => {
+  endPoint = e.changedTouches[0].pageX;
+  if (startPoint < endPoint) {
+    hotelInfoPrev();
+  } else if (startPoint > endPoint) {
+    hotelInfoNext();
+  }
 });

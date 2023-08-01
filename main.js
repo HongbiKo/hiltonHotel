@@ -91,12 +91,6 @@ prevBtn.addEventListener("click", () => {
   prevMove();
 });
 
-window.addEventListener("resize", () => {
-  slideWidth = slide.clientWidth;
-  prevMove();
-  nextMove();
-});
-
 let startPoint = 0;
 let endPoint = 0;
 
@@ -386,7 +380,7 @@ function moveSlide(num) {
 //
 //
 //
-// stay's image effect when scrolling
+//stay's image effect when scrolling
 
 const stayBoxes = document.querySelectorAll(".stay_information_box");
 
@@ -408,3 +402,78 @@ const options = {
 const observer = new IntersectionObserver(animatebox, options);
 
 stayBoxes.forEach((box) => observer.observe(box));
+
+//
+//
+//
+//
+// hotel_informaiton slide
+
+const hotelInfoSlide = document.querySelector(
+  ".hotel_information_slideshow_slides"
+);
+let hotelInfoSlideWidth = hotelInfoSlide.clientWidth;
+
+const hotelInfoPrevBtn = document.querySelector(
+  ".hotel_information_slideshow_arrow_left"
+);
+const hotelInfoNextBtn = document.querySelector(
+  ".hotel_information_slideshow_arrow_right"
+);
+
+const hotelInfoSlideItems = document.querySelectorAll(
+  ".hotel_information_slideshow_slides_contxt"
+);
+const hotelInfoMaxLength = hotelInfoSlideItems.length;
+
+let hotelInfoCurIndx = 1;
+
+const hotelInfoPagination = document.querySelector(
+  ".hotel_information_slideshow_pagination"
+);
+
+for (let i = 0; i < hotelInfoMaxLength; i++) {
+  if (i === 0) hotelInfoPagination.innerHTML += `<li class="active">•</li>`;
+  else hotelInfoPagination.innerHTML += `<li>•</li>`;
+}
+
+function hotelInfoNext() {
+  hotelInfoCurIndx++;
+  if (hotelInfoCurIndx <= hotelInfoMaxLength) {
+    const offset = hotelInfoSlideWidth * (hotelInfoCurIndx - 1);
+    hotelInfoSlideItems.forEach((i) => {
+      i.setAttribute("style", `left: ${-offset}px; transition: ${0.3}s`);
+    });
+  } else {
+    hotelInfoCurIndx--;
+  }
+}
+
+function hotelInfoPrev() {
+  hotelInfoCurIndx--;
+  if (hotelInfoCurIndx > 0) {
+    const offset = hotelInfoSlideWidth * (hotelInfoCurIndx - 1);
+    hotelInfoSlideItems.forEach((i) => {
+      i.setAttribute("style", `left: ${-offset}px; transition: ${0.3}s`);
+    });
+  } else {
+    hotelInfoCurIndx++;
+  }
+}
+
+hotelInfoNextBtn.addEventListener("click", () => {
+  hotelInfoNext();
+});
+
+hotelInfoPrevBtn.addEventListener("click", () => {
+  hotelInfoPrev();
+});
+
+window.addEventListener("resize", () => {
+  slideWidth = slide.clientWidth;
+  prevMove();
+  nextMove();
+  hotelInfoSlideWidth = hotelInfoSlide.clientWidth;
+  hotelInfoNext();
+  hotelInfoPrev();
+});

@@ -382,7 +382,7 @@ header.on {
 }
 
 .date_select_bar_option.right .date_select_bar_option_box {
-  margin-right: 0.5rem;
+  margin-right: 2rem;
 }
 
 .date_select_bar_option_title {
@@ -410,7 +410,7 @@ header.on {
   color: var(--color-light-black);
   font-weight: var(--fweight-extra-light);
   font-size: var(--font-small);
-  width: 12rem
+  width: 100%;
 }
 
 .date_select_bar_option_btn {
@@ -1119,6 +1119,33 @@ header.on {
 
 
 /* Responsive */
+
+@media screen and (max-width: 1420px) {
+  .date_select_bar {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .date_select_bar_option.left {
+    width: 100%;
+    margin-bottom: 1.3rem;
+  }
+
+  .date_select_bar_option.right {
+    width: 100%;
+    margin-bottom: 0.3rem;
+  }
+
+  .date_select_bar_option_box {
+    width: 45%;
+  }
+
+  .date_select_bar_option.right .date_select_bar_option_box {
+    margin-bottom: 0.8rem;
+  }
+}
+
+
 /* For below 768px screen width*/
 @media screen and (max-width: 768px) {
 
@@ -1133,6 +1160,27 @@ header.on {
   --font-micro: 10px;
   }
 
+  .date_select_bar_option_box {
+    width: 100%;
+  }
+
+  .date_select_bar_option.right .date_select_bar_option_box {
+    margin-right: 0;
+  }
+
+  .date_select_bar_option_date {
+    font-size: var(--font-regular);
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+  .navigation_list {
+    padding-right: 6rem;
+  }
 
 
 }

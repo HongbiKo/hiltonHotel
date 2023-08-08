@@ -178,8 +178,8 @@ function hotelListDrag() {
     let listX = 0;
 
     const getClientX = (e) => {
-      const isTouches = e.touches ? true : false;
-      return isTouches ? e.touches[0].clientX : e.clientX;
+      const isTouches = e.changedTouches ? true : false;
+      return isTouches ? e.changedTouches[0].clientX : e.clientX;
     };
 
     const getTranslateX = () => {
@@ -519,7 +519,7 @@ slide.addEventListener("touchend", (e) => {
 hotelInfoSlide.addEventListener("touchstart", (e) => {
   startPoint = e.touches[0].pageX;
 });
-slide.addEventListener("touchend", (e) => {
+hotelInfoSlide.addEventListener("touchend", (e) => {
   endPoint = e.changedTouches[0].pageX;
   if (startPoint < endPoint) {
     hotelInfoPrev();

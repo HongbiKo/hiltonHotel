@@ -1368,6 +1368,9 @@ header.on {
   .hotel_information_slideshow_slides_contxt_img.usingapp{
     background: url(./images/hotelInfo/usingapp.jpg) 80% 80% no-repeat;
   }
+  .hotel_information_slideshow_slides_contxt_img.membership-honor {
+    background: url(./images/hotelInfo/membershiphonor.jpg) 63% 65% no-repeat;
+  }
   
   .hotel_information_slideshow_arrow_left {
     width: 3.5rem;
@@ -1376,8 +1379,8 @@ header.on {
   }
 
   .hotel_information_slideshow_arrow_right {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
     right: -6%;
   }
 

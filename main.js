@@ -379,31 +379,27 @@ stayBoxes.forEach((box) => observer.observe(box));
 const hotelInfoSlide = document.querySelector(
   ".hotel_information_slideshow_slides"
 );
-let hotelInfoSlideWidth = hotelInfoSlide.clientWidth;
-
 const hotelInfoPrevBtn = document.querySelector(
   ".hotel_information_slideshow_arrow_left"
 );
 const hotelInfoNextBtn = document.querySelector(
   ".hotel_information_slideshow_arrow_right"
 );
-
 const hotelInfoSlideItems = document.querySelectorAll(
   ".hotel_information_slideshow_slides_contxt"
 );
-const hotelInfoMaxLength = hotelInfoSlideItems.length;
 
+let hotelInfoSlideWidth = hotelInfoSlide.clientWidth;
+const hotelInfoMaxLength = hotelInfoSlideItems.length;
 let hotelInfoCurIndx = 1;
 
 const hotelInfoPagination = document.querySelector(
   ".hotel_information_slideshow_pagination"
 );
-
 for (let i = 0; i < hotelInfoMaxLength; i++) {
   if (i === 0) hotelInfoPagination.innerHTML += `<li class="active">•</li>`;
   else hotelInfoPagination.innerHTML += `<li>•</li>`;
 }
-
 const hotelInfoPaginationItems = document.querySelectorAll(
   ".hotel_information_slideshow_pagination > li"
 );

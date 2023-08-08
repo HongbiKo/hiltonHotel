@@ -582,6 +582,7 @@ header.on {
   font-weight: var(--fweight-light);
   width: fit-conent;
   margin: 1.5rem auto 0;
+  transition: all 300ms ease-in-out;
 }
 
 
@@ -1016,6 +1017,14 @@ header.on {
   padding: 0.625rem 2.875rem;
   margin-top: 1.8rem;
   margin-left: 3.75rem;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+
+/* button hover event */
+
+.hoverBtn.on {
+  color: var(--color-black);
 }
 
 
@@ -1301,9 +1310,14 @@ header.on {
     margin-top: 4rem;
   }
 
+  .hotel_information_slideshow.inner {
+    width: 85%;
+  }
+
   .hotel_information_slideshow_slides_contxt {
     width: 90%;
     height: 27rem;
+    margin-right: 1rem;
   }
 
   .hotel_information_slideshow_slides_contxt_txt {

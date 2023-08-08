@@ -523,3 +523,17 @@ hotelInfoSlide.addEventListener("touchend", (e) => {
     hotelInfoNext();
   }
 });
+
+// hover event
+
+const hoverBtn = document.querySelectorAll(".hoverBtn");
+
+hoverBtn.forEach((i) => {
+  i.addEventListener("mouseenter", function () {
+    this.classList.add("on");
+  });
+
+  i.addEventListener("mouseleave", function () {
+    this.classList.remove("on");
+  });
+});

@@ -1,0 +1,154 @@
+/* popup */
+.popup {
+  max-width: 27rem;
+  max-height: 18rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #CBCBCB;
+  padding: 2.0rem 1.5rem 1.5rem 1.5rem;
+}
+
+.popup_close {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  cursor: pointer;
+  background-color: var(--color-blue);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup_close > span {
+  color: var(--color-white);
+  font-weight: var(--fweight-light);
+  font-size: var(--font-small);
+}
+
+.popup_title {
+  font-size: 1.45rem;
+  font-weight: var(--fweight-semi-bold);
+  margin-bottom: 1rem;
+}
+
+.popup_txt {
+  font-size: var(--font-regular);
+  font-weight: var(--fweight-light);
+  margin-bottom: 1rem;
+  color: var(--color-popup-letter);
+}
+
+.popup_input {
+  width: 45%;
+  border: 1px solid #E9E9E9;
+  border-radius: 10px;
+  padding: 3px;
+  text-align: center;
+  color: var(--color-black);
+  margin-bottom: 2rem;
+}
+
+.popup_inputbox {
+  display: flex;
+  margin-bottom: 1.7rem;
+}
+
+.popup_btn {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-radius: 20px;
+  padding: 7px 15px;
+  font-size: var(--font-small);
+  font-weight: var(--fweight-light);
+}
+
+/* popup_room */
+.pop_room {
+  display: none;
+}
+.pop_room.on {
+  display: flex;
+}
+
+/* popup_guest */
+.pop_guest {
+  display: none;
+}
+
+.pop_guest.on {
+  display: flex;
+}
+
+/* popup_specialRate */
+.pop_specialrate {
+  max-height: 45rem;
+  display: none;
+}
+
+.popup.pop_specialrate.on {
+  display: flex;
+}
+
+.popup.pop_specialrate .popup_close {
+  top: 5%;
+}
+
+.popup_inputbox.specialrate {
+  flex-direction: column;
+  margin-bottom: .9rem;
+}
+
+.popup_inputbox.specialrate .popup_inputbox_option{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.popup_input.checkbox {
+  margin: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 1rem;
+  accent-color: var(--color-blue);
+  border: 1px solid #E9E9E9;
+}
+
+.popup_inputbox_option.specialrate {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.6rem;
+}
+
+.popup_inputbox_option.specialrate:nth-last-child(2) {
+  margin-bottom: 4rem;
+}
+
+.popup_inputbox_option.specialrate > label {
+  margin-bottom: 0.3rem;
+}
+
+.popup_input.specialrate {
+  width: 100%;
+  margin-bottom: 0;
+  border: 1px solid #767676;
+  text-align: left;
+  padding-left: 1rem;
+  border-radius: 5px;
+}
+
+.popup.pop_specialrate .popup_btn {
+  right: 8%;
+  bottom: 4%;
+}

@@ -537,3 +537,25 @@ hoverBtn.forEach((i) => {
     this.classList.remove("on");
   });
 });
+
+// arrowup event
+
+const arrowUp = document.querySelector(".arrowUp");
+const datePartEnd = datePart.getBoundingClientRect().bottom + winScrollTop;
+
+document.addEventListener("scroll", function () {
+  if (window.scrollY > 2 / datePartEnd) {
+    arrowUp.classList.add("on");
+  } else {
+    arrowUp.classList.remove("on");
+  }
+});
+
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#main");
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}

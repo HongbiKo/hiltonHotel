@@ -65,11 +65,11 @@
           <input class="date_select_bar_option_date" placeholder="Choose the date">
         </div>
         <button class="date_select_bar_option_btn room">Room<br><span class="date_select_bar_option_btn_number_room">1</span></button>
-        <button class="date_select_bar_option_btn guest">Guest<br><span class="date_select_bar_option_btn_number">1</span></button>
-        <button class="date_select_bar_option_btn specialrate">Special Rate <span class="date_select_bar_option_btn_number">1</span></button>
+        <button class="date_select_bar_option_btn guest">Guest<br><span class="date_select_bar_option_btn_number_guest">1</span></button>
+        <button class="date_select_bar_option_btn specialrate">Special Rate <span class="date_select_bar_option_btn_number_specialrate"></span></button>
         <div class="date_btn_find">
           <div class="date_btn_find_icon"></div>
-          <span class="date_btn_find_txt">Find</span>
+          <button type="submit" class="date_btn_find_txt">Find</button>
         </div>
       </div>
     </div>
@@ -404,9 +404,9 @@
     <div class="popup_close"><span>X</span></div>
     <div class="popup_title">Room</div>
     <div class="popup_txt">Please write the room’s number.</div>
-    <form class="popup_form">
+    <form class="popup_form" name="room">
       <input class="popup_input room" value="1" type="number" name="room-number" min="1" placeholder="number">
-      <button class="popup_btn room">Submit</button>
+      <button class="popup_btn room" type="submit" name="room">Submit</button>
     </form>
   </div>
   <div class="popup pop_guest">
@@ -415,59 +415,67 @@
     <div class="popup_txt">Please write the guest’s composition.</div>
     <div class="popup_inputbox">
       <div class="popup_inutbox_option">
-        <label for="adults">Adults</label>
-        <input class="popup_input" id="adults" type="number" name="adults" min="1" placeholder="num">
+        <form class="popup_form" name="guest" >
+          <label for="adults">Adults</label>
+          <input class="popup_input adults" id="adults" type="number" name="adults" min="1" value="1" placeholder="1">
+        </form>
       </div>
       <div class="popup_inutbox_option">
-        <label for="kids">Kids</label>
-        <input class="popup_input" id="kids" type="number" name="kids" min="0" placeholder="num">
+        <form class="popup_form" name="guest">
+          <label for="kids">Kids</label>
+          <input class="popup_input kids" id="kids" type="number" name="kids" min="0" value="0" placeholder="0">
+          <button type="submit" name="guest" class="popup_btn guest">Submit</button>
+        </form>
       </div>
     </div>
-    <button class="popup_btn">Submit</button>
   </div>
   <div class="popup pop_specialrate">
     <div class="popup_close"><span>X</span></div>
     <div class="popup_title">Special Rates</div>
     <div class="popup_txt">Please write the special rate options.</div>
     <div class="popup_inputbox specialrate">
-      <div class="popup_inputbox_option">
-        <input class="popup_input checkbox" id="use_points" type="checkbox" name="use_points">
-        <label for="use_points">Use Pionts</label>
-      </div>
-      <div class="popup_inputbox_option">
-        <input class="popup_input checkbox" id="travel_agents" type="checkbox" name="travel_agents">
-        <label for="travel_agents">Travel Agents</label>
-      </div>
-      <div class="popup_inputbox_option">
-        <input class="popup_input checkbox" id="aaa_rate" type="checkbox" name="aaa_rate">
-        <label for="aaa_rate">AAA Rate</label>
-      </div>
-      <div class="popup_inputbox_option">
-        <input class="popup_input checkbox" id="aarp_rate" type="checkbox" name="aarp_rate">
-        <label for="aarp_rate">AARP Rate</label>
-      </div>
-      <div class="popup_inputbox_option">
-        <input class="popup_input checkbox" id="senior_rate" type="checkbox" name="senior_rate">
-        <label for="senior_rate">Senior Rate</label>
-      </div>
-      <div class="popup_inputbox_option">
-        <input class="popup_input checkbox" id="government_rate" type="checkbox" name="government_rate">
-        <label for="government_rate">Government / Military Rates</label>
-      </div>
+      <form class="popup_form" name="specialrate">
+        <div class="popup_inputbox_option">
+          <input class="popup_input checkbox" id="use_points" type="checkbox" name="specialrate">
+          <label for="use_points">Use Pionts</label>
+        </div>
+        <div class="popup_inputbox_option">
+          <input class="popup_input checkbox" id="travel_agents" type="checkbox" name="specialrate">
+          <label for="travel_agents">Travel Agents</label>
+        </div>
+        <div class="popup_inputbox_option">
+          <input class="popup_input checkbox" id="aaa_rate" type="checkbox" name="specialrate">
+          <label for="aaa_rate">AAA Rate</label>
+        </div>
+        <div class="popup_inputbox_option">
+          <input class="popup_input checkbox" id="aarp_rate" type="checkbox" name="specialrate">
+          <label for="aarp_rate">AARP Rate</label>
+        </div>
+        <div class="popup_inputbox_option">
+          <input class="popup_input checkbox" id="senior_rate" type="checkbox" name="specialrate">
+          <label for="senior_rate">Senior Rate</label>
+        </div>
+        <div class="popup_inputbox_option">
+          <input class="popup_input checkbox" id="government_rate" type="checkbox" name="specialrate">
+          <label for="government_rate">Government / Military Rates</label>
+        </div>
+        <button class="popup_btn" type="submit" name="specialrate">Submit</button>
+      </form>
     </div>
-    <div class="popup_inputbox_option specialrate">
-      <label for="promotion_code">Promotion Code</label>
-      <input class="popup_input specialrate" id="promotion_code" type="text">
-    </div>
-    <div class="popup_inputbox_option specialrate">
-      <label for="group_code">Group Code</label>
-      <input class="popup_input specialrate" id="group_code" type="text">
-    </div>
-    <div class="popup_inputbox_option specialrate">
-      <label for="corporate_account">Corporate Account</label>
-      <input class="popup_input specialrate" id="corporate_account" type="text">
-    </div>
-    <button class="popup_btn">Submit</button>
+    <form class="popup_form" name="specialrate">
+      <div class="popup_inputbox_option specialrate">
+        <label for="promotion_code">Promotion Code</label>
+        <input class="popup_input specialrate" id="promotion_code" name="promotion_code" type="text">
+      </div>
+      <div class="popup_inputbox_option specialrate">
+        <label for="group_code">Group Code</label>
+        <input class="popup_input specialrate" id="group_code" name="group_code" type="text">
+      </div>
+      <div class="popup_inputbox_option specialrate">
+        <label for="corporate_account">Corporate Account</label>
+        <input class="popup_input specialrate" id="corporate_account" name="corporate_account" type="text">
+      </div>
+    </form>
   </div>
 
   <script src="./src/js/main.js"></script>

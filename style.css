@@ -440,7 +440,7 @@ header.on {
   position: relative;
 }
 
-.date_select_bar_option_btn_specialrate {
+.date_select_bar_option_btn_number_specialrate {
   display: inline-block;
   position: absolute;
   right: 0.5rem;
@@ -454,15 +454,12 @@ header.on {
   font-weight: var(--fweight-bold);
   display: none;
 }
-.date_select_bar_option_btn_specialrate.on {
+.date_select_bar_option_btn_number_specialrate.on {
   display: inline-block;
 }
 
 .date_btn_find {
   background-color: var(--color-blue);
-  color: var(--color-white);
-  font-size: var(--font-small);
-  font-weight: var(--fweight-extra-light);
   padding: 0.75rem 1.563rem;
   border-radius: var(--size-border-radius-20);
   display: flex;
@@ -477,6 +474,11 @@ header.on {
   width: 0.938rem;
   height: 0.938rem;
   margin-right: 0.5rem;
+}
+
+.date_btn_find_txt {
+  color: var(--color-white);
+  font-weight: var(--fweight-extra-light);
 }
 
 
@@ -842,6 +844,12 @@ header.on {
   display: flex;
   cursor: pointer;
   width: fit-content;
+  transition: transform 200ms ease-in;
+}
+
+.hotel_information_slideshow_slides_contxt_txt_btn:hover {
+  transform: scale(1.05);
+  transition: transform 200ms ease-in;
 }
 
 .hotel_information_slideshow_slides_contxt_txt_btn_txt {
